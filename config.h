@@ -53,9 +53,8 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
-#define RUNCMD(cmd) { .v = (const char*[]){ "st", "-e", cmd, NULL } }
-#define RUNMANY(...) { .v = (const char*[]) __VA_ARGS__ }
 #define RUN(cmd) { .v = (const char*[]){ cmd, NULL } }
+#define RUNMANY(...) { .v = (const char*[]) __VA_ARGS__ }
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
@@ -88,12 +87,13 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_q,	   spawn,	   RUN("sysact") },
 	{ MODKEY,			XK_w,  	   spawn,	   RUN("librewolf") },
 	{ MODKEY,			XK_e,  	   spawn,	   RUN("thunderbird") },
-	{ MODKEY|ShiftMask,		XK_r,      spawn,	   RUNCMD("htop") },
+	{ MODKEY|ShiftMask,		XK_r,      spawn,	   RUNMANY({"st", "-e", "htop", NULL}) },
 	{ MODKEY|ShiftMask,		XK_d,      spawn,	   RUN("passmenu") },
-	{ MODKEY,        		XK_n,      spawn,	   RUNCMD("nvim -c VimwikiIndex") },
-	{ MODKEY|ShiftMask,             XK_w,      spawn,          RUNCMD("sudo nmtui") },
-	{ MODKEY,                       XK_F10,    spawn,          RUNCMD("pulsemixer") },
-	{ MODKEY,                       XK_F11,    spawn,          RUN("offdisp") },
+	{ MODKEY,        		XK_n,      spawn,	   RUNMANY({"st", "-e", "nvim", "-c", "VimwikiIndex", NULL}) },
+	{ MODKEY|ShiftMask,             XK_w,      spawn,          RUNMANY({"st", "-e", "sudo", "nmtui"}) },
+	{ MODKEY,                       XK_F9,     spawn,          RUNMANY({"st", "-e", "pulsemixer"}) },
+	{ MODKEY,                       XK_F10,    spawn,          RUN("offdisp") },
+	{ MODKEY,                       XK_F11,    spawn,          RUN("ondisp") },
 	{ MODKEY,                       XK_F12,    spawn,          RUN("remaps") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
