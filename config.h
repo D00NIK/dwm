@@ -93,7 +93,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_F9,     spawn,          RUNMANY({"st", "-e", "pulsemixer", NULL}) },
 	{ MODKEY,                       XK_F10,    spawn,          RUN("offdisp") },
 	{ MODKEY,                       XK_F11,    spawn,          RUN("ondisp") },
-	{ MODKEY,                       XK_F12,    spawn,          RUN("remaps") },
 	{ MODKEY,                       XK_Print,  spawn,          RUN("maimpick") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
