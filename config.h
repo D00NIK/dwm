@@ -90,6 +90,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          RUN("passmenu") },
 	{ MODKEY,                       XK_n,      spawn,          RUNMANY({"st", "-e", "nvim", "-c", "VimwikiIndex", NULL}) },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          RUNMANY({"st", "-e", "sudo", "nmtui", NULL}) },
+	{ MODKEY,                       XK_F2,     spawn,          RUNMANY({"brightnessctl", "set", "10-"}) },
+	{ MODKEY,                       XK_F3,     spawn,          RUNMANY({"brightnessctl", "set", "10+"}) },
 	{ MODKEY,                       XK_F9,     spawn,          RUNMANY({"st", "-e", "pulsemixer", NULL}) },
 	{ MODKEY,                       XK_F10,    spawn,          RUN("offdisp") },
 	{ MODKEY,                       XK_F11,    spawn,          RUN("ondisp") },
