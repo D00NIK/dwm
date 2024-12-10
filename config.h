@@ -85,7 +85,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_q,	   spawn,          RUN("sysact") },
-	{ MODKEY,                       XK_w,  	   spawn,          RUN("librewolf") },
+	{ MODKEY,                       XK_w,  	   spawn,          RUN("firefox") },
 	{ MODKEY|ShiftMask,             XK_r,      spawn,          RUNMANY({"st", "-e", "htop", NULL}) },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          RUN("passmenu") },
 	{ MODKEY,                       XK_n,      spawn,          RUNMANY({"st", "-e", "nvim", "-c", "VimwikiIndex", NULL}) },
@@ -93,8 +93,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_F2,     spawn,          RUNMANY({"brightnessctl", "set", "10-"}) },
 	{ MODKEY,                       XK_F3,     spawn,          RUNMANY({"brightnessctl", "set", "10+"}) },
 	{ MODKEY,                       XK_F9,     spawn,          RUNMANY({"st", "-e", "pulsemixer", NULL}) },
-	{ MODKEY,                       XK_F10,    spawn,          RUN("offdisp") },
-	{ MODKEY,                       XK_F11,    spawn,          RUN("ondisp") },
 	{ MODKEY,                       XK_Print,  spawn,          RUN("maimpick") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
